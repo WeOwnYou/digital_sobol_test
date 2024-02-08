@@ -76,8 +76,8 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       return;
     }
 
-    // if (_isSignedIn) {
+    if (_isSignedIn) {
       return emit(AuthenticationState.enteringName(state.phone));
-    // }
+    }
   }
 }
