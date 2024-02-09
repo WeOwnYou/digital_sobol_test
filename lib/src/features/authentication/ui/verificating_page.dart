@@ -54,9 +54,10 @@ class _BuildEnterCodeDescription extends StatelessWidget {
   }
 }
 
-const kPinHeight = 35.0;
-const kPinWidth = 40.0;
-const kCaretRadius = 5.0;
+const _kPinHeight = 35.0;
+const _kPinWidth = 40.0;
+const _kCaretRadius = 5.0;
+const _kPinCodeLength = 6;
 
 class PinField extends StatelessWidget {
   const PinField({super.key});
@@ -69,16 +70,16 @@ class PinField extends StatelessWidget {
           Theme.of(context).textTheme.displayLarge?.copyWith(fontSize: 28),
       textStyle:
           Theme.of(context).textTheme.displayLarge?.copyWith(fontSize: 28),
-      length: 6,
+      length: _kPinCodeLength,
       animationType: AnimationType.fade,
       pinTheme: PinTheme(
         shape: PinCodeFieldShape.underline,
         selectedColor: AppColors.inactiveGrey,
         activeColor: AppColors.inactiveGrey,
         inactiveColor: AppColors.inactiveGrey,
-        borderRadius: BorderRadius.circular(kCaretRadius),
-        fieldHeight: kPinHeight,
-        fieldWidth: kPinWidth,
+        borderRadius: BorderRadius.circular(_kCaretRadius),
+        fieldHeight: _kPinHeight,
+        fieldWidth: _kPinWidth,
         activeFillColor: Colors.white,
       ),
       cursorColor: Colors.black,

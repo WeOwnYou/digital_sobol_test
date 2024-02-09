@@ -76,6 +76,12 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       return;
     }
 
+    final credential = PhoneAuthProvider.credential(
+      verificationId: state._verificationId!,
+      smsCode: smsCode,
+    );
+    await FirebaseAuth.instance.signInWithCredential(credential);
+
     if (_isSignedIn) {
       return emit(AuthenticationState.enteringName(state.phone));
     }
